@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Character } from '../../models/character.interface';
 import { RickAndMortyService } from '../../services/rick-and-morty.service';
@@ -10,8 +9,7 @@ import { RickAndMortyService } from '../../services/rick-and-morty.service';
   templateUrl: './character-details.component.html',
   styleUrls: ['./character-details.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
-  providers: [RickAndMortyService]
+  imports: [CommonModule, FormsModule]
 })
 export class CharacterDetailsComponent {
   characterId: number | null = null;
