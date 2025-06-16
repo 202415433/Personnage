@@ -1,10 +1,14 @@
 import { Routes } from '@angular/router';
-import { CharactersListComponent } from './components/characters-list/characters-list.component';
-import { CharacterDetailsComponent } from './components/character-details/character-details.component';
 
 export const routes: Routes = [
-  { path: 'characters', component: CharactersListComponent },
-  { path: 'details', component: CharacterDetailsComponent },
-  { path: '', redirectTo: '/characters', pathMatch: 'full' }, // Route par défaut
-  { path: '**', redirectTo: '/characters' } // Route pour gérer les URLs invalides
+  { 
+    path: 'characters', 
+    loadComponent: () => import('./components/characters-list/characters-list.component').then(m => m.CharactersListComponent)
+  },
+  { 
+    path: 'details', 
+    loadComponent: () => import('./components/character-details/character-details.component').then(m => m.CharacterDetailsComponent)
+  },
+  { path: '', redirectTo: '/characters', pathMatch: 'full' },
+  { path: '**', redirectTo: '/characters' }
 ];
