@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Character } from '../../models/character.interface';
 import { RickAndMortyService } from '../../services/rick-and-morty.service';
 
 @Component({
   selector: 'app-characters-list',
   templateUrl: './characters-list.component.html',
-  styleUrls: ['./characters-list.component.scss']
+  styleUrls: ['./characters-list.component.scss'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class CharactersListComponent implements OnInit {
   characters: Character[] = [];
