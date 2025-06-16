@@ -1,0 +1,47 @@
+<div class="character-details-container">
+  <h2>Détails du Personnage</h2>
+
+  <div class="search-form">
+    <div class="input-group">
+      <input 
+        type="number" 
+        [(ngModel)]="characterId" 
+        placeholder="Entrez l'ID du personnage"
+        min="1"
+        class="form-control">
+      <button 
+        (click)="searchCharacter()"
+        [disabled]="loading || !characterId || characterId <= 0"
+        class="search-button">
+        Rechercher
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading spinner -->
+  <div *ngIf="loading" class="loading">
+    Chargement...
+  </div>
+
+  <!-- Error message -->
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+
+  <!-- Character details -->
+  <div *ngIf="character" class="character-card">
+    <div class="character-image">
+      <img [src]="character.image" [alt]="character.name">
+    </div>
+    <div class="character-info">
+      <h3>{{ character.name }}</h3>
+      <ul>
+        <li><strong>Status:</strong> {{ character.status }}</li>
+        <li><strong>Species:</strong> {{ character.species }}</li>
+        <li><strong>Gender:</strong> {{ character.gender }}</li>
+        <li><strong>Origin:</strong> {{ character.origin.name }}</li>
+        <li><strong>Location:</strong> {{ character.location.name }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
