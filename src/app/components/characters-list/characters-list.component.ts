@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { Character } from '../../models/character.interface';
 import { RickAndMortyService } from '../../services/rick-and-morty.service';
 
@@ -9,8 +8,7 @@ import { RickAndMortyService } from '../../services/rick-and-morty.service';
   templateUrl: './characters-list.component.html',
   styleUrls: ['./characters-list.component.scss'],
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
-  providers: [RickAndMortyService]
+  imports: [CommonModule]
 })
 export class CharactersListComponent implements OnInit {
   characters: Character[] = [];
