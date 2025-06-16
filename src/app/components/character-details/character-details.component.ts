@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Character } from '../../models/character.interface';
 import { RickAndMortyService } from '../../services/rick-and-morty.service';
 
 @Component({
   selector: 'app-character-details',
   templateUrl: './character-details.component.html',
-  styleUrls: ['./character-details.component.scss']
+  styleUrls: ['./character-details.component.scss'],
+  standalone: true,
+  imports: [CommonModule, FormsModule]
 })
 export class CharacterDetailsComponent {
   characterId: number | null = null;
