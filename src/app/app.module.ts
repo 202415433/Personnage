@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CharactersListComponent } from './components/characters-list/characters-list.component';
+import { CharacterDetailsComponent } from './components/character-details/character-details.component';
 
 @NgModule({
   declarations: [
     AppComponent ,
-    CharactersListComponent
+    CharactersListComponent,
+    CharacterDetailsComponent
   ],
   imports: [
     BrowserModule,
