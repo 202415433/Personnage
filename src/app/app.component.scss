@@ -1,0 +1,40 @@
+.app-container {
+  min-height: 100vh;
+  
+  .navigation {
+    background-color: #333;
+    padding: 1rem;
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 20px;
+      
+      li {
+        a {
+          color: white;
+          text-decoration: none;
+          padding: 8px 16px;
+          border-radius: 4px;
+          transition: background-color 0.3s;
+          
+          &:hover {
+            background-color: #555;
+          }
+          
+          &.active {
+            background-color: #007bff;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
